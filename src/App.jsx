@@ -23,7 +23,7 @@ function App() {
 
       return {
         ...prevState,
-        tasks: [...prevState.tasks, newTask],
+        tasks: [newTask, ...prevState.tasks],
       };
     });
   }
@@ -86,7 +86,7 @@ function App() {
         ...prevState,
         selectedProjectId: undefined,
         projects: prevState.projects.filter(
-          (project) => project.id != prevState.selectedProjectId
+          (project) => project.id !== prevState.selectedProjectId
         ),
       };
     });
